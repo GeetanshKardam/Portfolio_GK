@@ -1,0 +1,116 @@
+/* =============================================
+   phone.css — Mobile & Tablet Responsive Styles
+   ============================================= */
+
+/* ---- Tablet (max-width: 768px) ---- */
+@media only screen and (max-width: 768px) {
+  .galleryhead {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3vw 5vw 1vw 5vw;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+    padding: 1vw 5vw 1vw 5vw;
+  }
+
+  .imageheads {
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  .gotopbtn img {
+    width: 35px;
+    height: 35px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .breadcrumb__text h2 {
+    font-size: 28px;
+  }
+
+  .hero__section {
+    padding-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .slide-item img {
+    height: 350px;
+    padding: 20px 0;
+  }
+
+  .hero-text-slider {
+    padding-top: 25px;
+  }
+
+  .contactimage img {
+    height: 18rem;
+  }
+}
+
+/* ---- Mobile (max-width: 480px) ---- */
+@media only screen and (max-width: 480px) {
+  .galleryhead {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3px;
+    padding: 3vw 3vw 1vw 3vw;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    padding: 1vw 3vw 1vw 3vw;
+  }
+
+  .imageheads {
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  .gallery img:hover {
+    transform: none;
+  }
+
+  .gallery img.full {
+    object-fit: contain;
+  }
+
+  .breadcrumb__text h2 {
+    font-size: 22px;
+  }
+
+  .hero__section {
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .slide-item img {
+    height: 250px;
+    padding: 0;
+  }
+
+  .hero-text-slider {
+    padding-top: 15px;
+  }
+
+  .footer__option__item h5 {
+    font-size: 16px;
+  }
+
+  .footer__option__item p,
+  .footer__option__item ul li a {
+    font-size: 13px;
+  }
+
+  .contactimage img {
+    height: 14rem;
+  }
+}

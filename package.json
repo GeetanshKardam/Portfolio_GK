@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-website-final",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run clean && npm run sass && npm run css && npm run js",
+    "clean": "rm -rf dist && mkdir -p dist/css dist/js dist/images",
+    "sass": "sass --no-source-map sass/style.scss css/style.css",
+    "css": "cleancss -o dist/css/style.min.css css/style.css",
+    "js": "terser js/main.js -o dist/js/main.min.js --compress --mangle",
+    "copy": "cp -R *.html css/img images fonts js/vendor dist/",
+    "prepare": "npm run build && npm run copy"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0",
+    "clean-css-cli": "^5.4.2",
+    "terser": "^5.18.0"
+  }
+}

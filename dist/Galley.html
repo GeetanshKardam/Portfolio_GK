@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  flex-grow: 1;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uneven Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="gallery" id="gallery">
+    <!-- Images will be added dynamically here -->
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const gallery = document.getElementById("gallery");
+
+  const images = [
+    "image1.jpg",
+    "image2.jpg",
+    "image3.jpg",
+    // Add more image URLs here
+  ];
+
+  images.forEach(imageUrl => {
+    const imgContainer = document.createElement("div");
+    imgContainer.classList.add("gallery-item");
+
+    const img = document.createElement("img");
+    img.src = imageUrl;
+    img.onload = function() {
+      const aspectRatio = img.naturalWidth / img.naturalHeight;
+      imgContainer.style.flexBasis = `calc(${aspectRatio} * 100%)`;
+    };
+
+    imgContainer.appendChild(img);
+    gallery.appendChild(imgContainer);
+  });
+});
+
+  </script>
+</body>
+</html>

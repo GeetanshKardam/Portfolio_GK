@@ -1942,7 +1942,7 @@ ol {
 .gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 15px;
+  /*grid-gap: 15px;*/
   max-width: 100%;
   overflow: hidden;
   background-color: #000f29;

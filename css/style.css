@@ -1903,9 +1903,9 @@ ol {
 .galleryhead {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
+  /* grid-gap: 5px; */
   max-width: 100%;
-  padding: 3vw 12vw 1vw 12vw;
+  /* padding: 3vw 12vw 1vw 12vw; */
   position: sticky;
   background-color: #000f29;
   position: -webkit-sticky;
@@ -1915,7 +1915,7 @@ ol {
 .galleryhead img {
   width: 100%;
   object-fit: contain;
-  border-radius: 1px;
+  /* border-radius: 1px; */
   filter: grayscale(1);
 
 }

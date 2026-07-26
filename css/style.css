@@ -1947,10 +1947,8 @@ ol {
   overflow: hidden;
   background-color: #000f29;
 /*#padding: 1vw 12vw 1vw 12vw;*/
-  
-
-  
 }
+
 .imageheads{
   display: flex ;
   justify-content: center;
@@ -1972,7 +1970,7 @@ ol {
   width: 100%;
   object-fit: contain;
   position: relative;
-  border-radius: 3px;
+  /*border-radius: 3px; */
   filter: drop-shadow(2px 4px 6px black);
 }
 

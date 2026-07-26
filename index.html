@@ -462,6 +462,272 @@
       
       <!-- Swiper End -->
 
+      /* INSTAGRAM SECTION Begins */ 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  #ig-embed-section {
+    --base:     #0D0221;
+    --base-2:   #170A34;
+    --line:     rgba(255,255,255,0.08);
+    --ink:      #F5F3FA;
+    --ink-dim:  #9A93B8;
+    --blue:     #3897F0;
+
+    background: var(--base);
+    padding: 40px 4vw 60px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ige-card {
+    width: 100%;
+    max-width: 1040px;
+    background: var(--base);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  }
+
+  /* ---------- header ---------- */
+  .ige-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px 32px;
+    flex-wrap: wrap;
+  }
+
+  .ige-avatar {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    padding: 3px;
+    background: conic-gradient(from 220deg, #ffdb8b, #ee2a7b, #8134af, #4776e6, #ffdb8b);
+    flex-shrink: 0;
+  }
+  .ige-avatar img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid var(--base);
+  }
+
+  .ige-id {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-right: auto;
+  }
+  .ige-name {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+  .ige-name svg { width: 17px; height: 17px; flex-shrink: 0; }
+  .ige-handle { font-size: 14px; color: var(--ink-dim); font-weight: 500; }
+
+  .ige-stats {
+    display: flex;
+    gap: 34px;
+  }
+  .ige-stat { text-align: center; }
+  .ige-stat-num {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .ige-stat-label {
+    font-size: 13px;
+    color: var(--ink-dim);
+    margin-top: 2px;
+  }
+
+  .ige-follow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14.5px;
+    text-decoration: none;
+    padding: 11px 22px;
+    border-radius: 10px;
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+  .ige-follow:hover { filter: brightness(1.1); transform: translateY(-1px); }
+  .ige-follow svg { width: 17px; height: 17px; }
+
+  /* ---------- grid ---------- */
+  .ige-grid-wrap { position: relative; }
+
+  .ige-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+  }
+
+  .ige-cell {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: block;
+    background: var(--base-2);
+  }
+  .ige-cell img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), filter 0.3s ease;
+  }
+  .ige-cell:hover img { transform: scale(1.05); filter: brightness(0.75); }
+
+  .ige-cell-icon {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 19px; height: 19px;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.7));
+  }
+
+  /* carousel nav arrows */
+  .ige-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(13,2,33,0.6);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ink);
+    z-index: 2;
+  }
+  .ige-nav svg { width: 16px; height: 16px; }
+  .ige-nav.prev { left: 12px; }
+  .ige-nav.next { right: 12px; }
+
+  @media (max-width: 640px) {
+    .ige-header { padding: 22px 20px; gap: 16px; }
+    .ige-avatar { width: 60px; height: 60px; }
+    .ige-name { font-size: 16px; }
+    .ige-stats { gap: 18px; }
+    .ige-stat-num { font-size: 15px; }
+    .ige-stat-label { font-size: 11px; }
+    .ige-follow { padding: 9px 16px; font-size: 13px; }
+    .ige-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ige-cell img, .ige-follow { transition: none; }
+  }
+</style>
+
+<section id="ig-embed-section" aria-label="Instagram">
+  <div class="ige-card">
+
+    <!-- ============ HEADER ============ -->
+    <div class="ige-header">
+      <div class="ige-avatar">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&q=75" alt="Profile photo">
+      </div>
+
+      <div class="ige-id">
+        <span class="ige-name">
+          ALEX RIVERA
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l2.4 1.2 2.6-.6 1.4 2.3 2.3 1.4-.6 2.6L21.3 11l-1.2 2.4.6 2.6-2.3 1.4-1.4 2.3-2.6-.6L12 20.3l-2.4-1.2-2.6.6-1.4-2.3-2.3-1.4.6-2.6L2.7 11l1.2-2.4-.6-2.6 2.3-1.4L6.9 2.3l2.6.6L12 2z" fill="#3897F0"/>
+            <path d="M8.5 12.2l2.3 2.3 4.7-4.9" stroke="#0D0221" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="ige-handle">@alexcuts</span>
+      </div>
+
+      <div class="ige-stats">
+        <div class="ige-stat"><div class="ige-stat-num">214</div><div class="ige-stat-label">Posts</div></div>
+        <div class="ige-stat"><div class="ige-stat-num">48.2K</div><div class="ige-stat-label">Followers</div></div>
+        <div class="ige-stat"><div class="ige-stat-num">312</div><div class="ige-stat-label">Following</div></div>
+      </div>
+
+      <a class="ige-follow" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.3" cy="6.7" r="1"/>
+        </svg>
+        Follow
+      </a>
+    </div>
+
+    <!-- ============ GRID ============ -->
+    <div class="ige-grid-wrap">
+
+      <div class="ige-nav prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </div>
+      <div class="ige-nav next" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+
+      <div class="ige-grid">
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=500&q=70" alt="Behind the scenes on set">
+          <svg class="ige-cell-icon" viewBox="0 0 24 24" fill="#fff"><path d="M4 4h13v13H4zM7 7h13v13H7z" opacity="0.9"/></svg>
+        </a>
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&q=70" alt="Music video edit">
+          <svg class="ige-cell-icon" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h13a2 2 0 012 2v14a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2zm14 5l4-2v12l-4-2V8z"/></svg>
+        </a>
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=70" alt="Travel documentary edit">
+          <svg class="ige-cell-icon" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h13a2 2 0 012 2v14a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2zm14 5l4-2v12l-4-2V8z"/></svg>
+        </a>
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?w=500&q=70" alt="Brand commercial edit">
+        </a>
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=500&q=70" alt="Cinematic short film">
+          <svg class="ige-cell-icon" viewBox="0 0 24 24" fill="#fff"><path d="M4 4h13v13H4zM7 7h13v13H7z" opacity="0.9"/></svg>
+        </a>
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?w=500&q=70" alt="Podcast clip edit">
+        </a>
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1533928298208-27ff66555d8d?w=500&q=70" alt="Colour grading session">
+          <svg class="ige-cell-icon" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h13a2 2 0 012 2v14a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2zm14 5l4-2v12l-4-2V8z"/></svg>
+        </a>
+
+        <a class="ige-cell" href="#" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1478720568477-3f6e2c4a1b0e?w=500&q=70" alt="Editing timeline close-up">
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+/* INSTAGRAM SECTION Ends */
+
 
    <!-- Testimonial Section Begin -->
    <section class="testimonial spad set-bg" data-setbg="img/testimonial-bg.jpg">
